@@ -5,7 +5,7 @@ require File.expand_path('../config/application', __FILE__)
 #require 'rake/dsl_definition'
 require 'rake'
 
-module ::Casting
+module ::CastingUP
   class Application
     include Rake::DSL
   end
@@ -16,7 +16,7 @@ module ::RakeFileUtils
 end
 
 
-Casting::Application.load_tasks
+CastingUP::Application.load_tasks
 
 
 
