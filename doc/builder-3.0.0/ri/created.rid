@@ -1,0 +1,16 @@
+Mon, 25 Jun 2012 12:31:57 +0200
+lib/blankslate.rb	Mon, 25 Jun 2012 12:05:37 +0200
+lib/builder/blankslate.rb	Mon, 25 Jun 2012 12:05:37 +0200
+lib/builder/xchar.rb	Mon, 25 Jun 2012 12:05:37 +0200
+lib/builder/xmlbase.rb	Mon, 25 Jun 2012 12:05:37 +0200
+lib/builder/xmlevents.rb	Mon, 25 Jun 2012 12:05:37 +0200
+lib/builder/xmlmarkup.rb	Mon, 25 Jun 2012 12:05:37 +0200
+lib/builder.rb	Mon, 25 Jun 2012 12:05:37 +0200
+CHANGES	Mon, 25 Jun 2012 12:05:37 +0200
+Rakefile	Mon, 25 Jun 2012 12:05:37 +0200
+README	Mon, 25 Jun 2012 12:05:37 +0200
+README.rdoc	Mon, 25 Jun 2012 12:05:37 +0200
+TAGS	Mon, 25 Jun 2012 12:05:37 +0200
+doc/releases/builder-1.2.4.rdoc	Mon, 25 Jun 2012 12:05:37 +0200
+doc/releases/builder-2.0.0.rdoc	Mon, 25 Jun 2012 12:05:37 +0200
+doc/releases/builder-2.1.1.rdoc	Mon, 25 Jun 2012 12:05:37 +0200

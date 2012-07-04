@@ -1,0 +1,4 @@
+U:RDoc::Attr[iI"dump_default_options:EFI"JSON::dump_default_options;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"9The global default options for the JSON.dump method::encoding"
+CP850o:RDoc::Markup::Verbatim;	[":max_nesting: false
+":allow_nan: true
+":quirks_mode: trueT

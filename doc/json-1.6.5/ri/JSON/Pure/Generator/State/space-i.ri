@@ -1,0 +1,4 @@
+U:RDoc::Attr[iI"
+space:EFI"'JSON::Pure::Generator::State#space:encoding"
+CP850I"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;
+[I"GThis string is used to insert a space between the tokens in a JSON;@	I"string.;@	F

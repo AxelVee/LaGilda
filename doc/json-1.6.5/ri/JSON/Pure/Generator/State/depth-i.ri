@@ -1,0 +1,4 @@
+U:RDoc::Attr[iI"
+depth:EFI"'JSON::Pure::Generator::State#depth:encoding"
+CP850I"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;
+[I"IThis integer returns the current depth data structure nesting in the;@	I"generated JSON.;@	F

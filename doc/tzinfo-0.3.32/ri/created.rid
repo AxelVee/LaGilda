@@ -1,0 +1,25 @@
+Sun, 25 Mar 2012 21:10:52 +0200
+lib/tzinfo/country.rb	Sun, 25 Mar 2012 21:05:44 +0200
+lib/tzinfo/country_index_definition.rb	Sun, 25 Mar 2012 21:05:44 +0200
+lib/tzinfo/country_info.rb	Sun, 25 Mar 2012 21:05:44 +0200
+lib/tzinfo/country_timezone.rb	Sun, 25 Mar 2012 21:05:44 +0200
+lib/tzinfo/data_timezone.rb	Sun, 25 Mar 2012 21:05:44 +0200
+lib/tzinfo/data_timezone_info.rb	Sun, 25 Mar 2012 21:05:44 +0200
+lib/tzinfo/info_timezone.rb	Sun, 25 Mar 2012 21:05:44 +0200
+lib/tzinfo/linked_timezone.rb	Sun, 25 Mar 2012 21:05:44 +0200
+lib/tzinfo/linked_timezone_info.rb	Sun, 25 Mar 2012 21:05:44 +0200
+lib/tzinfo/offset_rationals.rb	Sun, 25 Mar 2012 21:05:44 +0200
+lib/tzinfo/ruby_core_support.rb	Sun, 25 Mar 2012 21:05:44 +0200
+lib/tzinfo/timezone.rb	Sun, 25 Mar 2012 21:05:44 +0200
+lib/tzinfo/timezone_definition.rb	Sun, 25 Mar 2012 21:05:44 +0200
+lib/tzinfo/timezone_index_definition.rb	Sun, 25 Mar 2012 21:05:44 +0200
+lib/tzinfo/timezone_info.rb	Sun, 25 Mar 2012 21:05:44 +0200
+lib/tzinfo/timezone_offset_info.rb	Sun, 25 Mar 2012 21:05:44 +0200
+lib/tzinfo/timezone_period.rb	Sun, 25 Mar 2012 21:05:44 +0200
+lib/tzinfo/timezone_proxy.rb	Sun, 25 Mar 2012 21:05:44 +0200
+lib/tzinfo/timezone_transition_info.rb	Sun, 25 Mar 2012 21:05:44 +0200
+lib/tzinfo/time_or_datetime.rb	Sun, 25 Mar 2012 21:05:44 +0200
+lib/tzinfo/tzdataparser.rb	Sun, 25 Mar 2012 21:05:44 +0200
+lib/tzinfo.rb	Sun, 25 Mar 2012 21:05:44 +0200
+README	Sun, 25 Mar 2012 21:05:39 +0200
+CHANGES	Sun, 25 Mar 2012 21:05:39 +0200

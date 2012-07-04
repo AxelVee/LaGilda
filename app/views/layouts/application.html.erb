@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title> <%= title %> </title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />	
+  <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
+  <%= stylesheet_link_tag 'blueprint/print', :media => 'print' %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+  <!-- [if -lt IE 9]>
+  	<script src= "http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!-- [if -lt IE 9]>
+  	<%= stylesheet_link_tag 'blueprint/ie' %>
+  <![endif]-->
+  <%= stylesheet_link_tag 'prova', :media => 'screen' %>
+
+</head>
+
+<body>
+		
+
+	<div id="background"></div>
+	<div id="page">
+		<div id="sidebar">
+			<div id="logo">
+				<%= link_to image_tag("I selezionati maestri d'arte\n disponibili per te"), root_path %>
+					
+			</div> <!-- /#logo -->
+			<ul id="navigation">
+				<li><%= link_to "About us", about_path %></a></li>
+				<li><%= link_to "Galleria", root_path %></a></li>
+				<li><a href="images.html">Iscriviti adesso</a></li>
+				<li><a href="contact-us.html">Scegli la tua lezione</a></li>
+				<li><a href="blog.html">Forum</a></li>
+			</ul> <!-- /#navigation -->
+			<ul id="connect">
+				<li><a href="http://facebook.com/freewebsitetemplates" target="_blank" class="facebook"></a></li>
+				<li><a href="http://twitter.com/fwtemplates" target="_blank" class="twitter"></a></li>
+				<li><a href="" class="link-us"></a></li>
+			</ul> <!-- /#connect -->
+			<div class="footer">
+				&copy; Copyright &copy; 2012.<br/>
+				<a href="http://www.facebook.com/?action=read&tid=id.253765924714446&sk=inbox&page&query#!/profile.php?id=1575332772">Axel Vee</a> all rights reserved.
+			
+			
+		</div> <!-- /.footer -->
+			
+		
+			
+		</div> <!-- /#sidebar -->
+		
+	
+
+	<div id="contents">
+			<section class="corpo">
+		<%=  yield %>
+			</section>
+
+
+	<div class="tags">
+				 
+					<a> <%= link_to "Contact", "#" %> </a>
+					<a> <%= link_to "News", "#" %> </a>
+				
+				</div>
+				</div>
+	</div> <!-- /#page -->
+
+
+</body>
+		
+
+</html>
+
+
+

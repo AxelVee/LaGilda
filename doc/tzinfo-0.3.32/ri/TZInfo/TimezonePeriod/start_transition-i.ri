@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"start_transition:EFI",TZInfo::TimezonePeriod#start_transition;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"NThe TimezoneTransitionInfo that defines the start of this TimezonePeriod :encoding"
+CP850I"(may be nil if unbounded).;@F

@@ -1,0 +1,14 @@
+Sun, 25 Mar 2012 21:15:00 +0200
+lib/action_mailer/base.rb	Sun, 25 Mar 2012 21:05:48 +0200
+lib/action_mailer/collector.rb	Sun, 25 Mar 2012 21:05:49 +0200
+lib/action_mailer/delivery_methods.rb	Sun, 25 Mar 2012 21:05:49 +0200
+lib/action_mailer/log_subscriber.rb	Sun, 25 Mar 2012 21:05:49 +0200
+lib/action_mailer/mail_helper.rb	Sun, 25 Mar 2012 21:05:49 +0200
+lib/action_mailer/railtie.rb	Sun, 25 Mar 2012 21:05:49 +0200
+lib/action_mailer/test_case.rb	Sun, 25 Mar 2012 21:05:49 +0200
+lib/action_mailer/test_helper.rb	Sun, 25 Mar 2012 21:05:49 +0200
+lib/action_mailer/version.rb	Sun, 25 Mar 2012 21:05:49 +0200
+lib/action_mailer.rb	Sun, 25 Mar 2012 21:05:49 +0200
+lib/rails/generators/mailer/mailer_generator.rb	Sun, 25 Mar 2012 21:05:49 +0200
+lib/rails/generators/mailer/templates/mailer.rb	Sun, 25 Mar 2012 21:05:49 +0200
+lib/rails/generators/mailer/USAGE	Sun, 25 Mar 2012 21:05:49 +0200

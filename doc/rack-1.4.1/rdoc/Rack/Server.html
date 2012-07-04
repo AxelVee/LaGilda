@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="CP850"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=CP850" http-equiv="Content-Type" />
+
+  <title>Class: Rack::Server</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/rack/server_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/rack/server.rb">lib/rack/server.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">CLASS</span> <a href="Server/Options.html">Rack::Server::Options</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-logging_middleware">::logging_middleware</a></li>
+          
+          <li><a href="#method-c-middleware">::middleware</a></li>
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-c-start">::start</a></li>
+          
+          <li><a href="#method-i-app">#app</a></li>
+          
+          <li><a href="#method-i-default_options">#default_options</a></li>
+          
+          <li><a href="#method-i-middleware">#middleware</a></li>
+          
+          <li><a href="#method-i-options">#options</a></li>
+          
+          <li><a href="#method-i-server">#server</a></li>
+          
+          <li><a href="#method-i-start">#start</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../KNOWN-ISSUES.html">KNOWN-ISSUES</a></li>
+        
+          <li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../Rack.html">Rack</a></li>
+        
+          <li><a href="../Rack/Auth.html">Rack::Auth</a></li>
+        
+          <li><a href="../Rack/Auth/AbstractHandler.html">Rack::Auth::AbstractHandler</a></li>
+        
+          <li><a href="../Rack/Auth/AbstractRequest.html">Rack::Auth::AbstractRequest</a></li>
+        
+          <li><a href="../Rack/Auth/Basic.html">Rack::Auth::Basic</a></li>
+        
+          <li><a href="../Rack/Auth/Basic/Request.html">Rack::Auth::Basic::Request</a></li>
+        
+          <li><a href="../Rack/Auth/Digest.html">Rack::Auth::Digest</a></li>
+        
+          <li><a href="../Rack/Auth/Digest/MD5.html">Rack::Auth::Digest::MD5</a></li>
+        
+          <li><a href="../Rack/Auth/Digest/Nonce.html">Rack::Auth::Digest::Nonce</a></li>
+        
+          <li><a href="../Rack/Auth/Digest/Params.html">Rack::Auth::Digest::Params</a></li>
+        
+          <li><a href="../Rack/Auth/Digest/Request.html">Rack::Auth::Digest::Request</a></li>
+        
+          <li><a href="../Rack/BodyProxy.html">Rack::BodyProxy</a></li>
+        
+          <li><a href="../Rack/Builder.html">Rack::Builder</a></li>
+        
+          <li><a href="../Rack/Cascade.html">Rack::Cascade</a></li>
+        
+          <li><a href="../Rack/Chunked.html">Rack::Chunked</a></li>
+        
+          <li><a href="../Rack/Chunked/Body.html">Rack::Chunked::Body</a></li>
+        
+          <li><a href="../Rack/CommonLogger.html">Rack::CommonLogger</a></li>
+        
+          <li><a href="../Rack/ConditionalGet.html">Rack::ConditionalGet</a></li>
+        
+          <li><a href="../Rack/Config.html">Rack::Config</a></li>
+        
+          <li><a href="../Rack/ContentLength.html">Rack::ContentLength</a></li>
+        
+          <li><a href="../Rack/ContentType.html">Rack::ContentType</a></li>
+        
+          <li><a href="../Rack/Deflater.html">Rack::Deflater</a></li>
+        
+          <li><a href="../Rack/Deflater/DeflateStream.html">Rack::Deflater::DeflateStream</a></li>
+        
+          <li><a href="../Rack/Deflater/GzipStream.html">Rack::Deflater::GzipStream</a></li>
+        
+          <li><a href="../Rack/Directory.html">Rack::Directory</a></li>
+        
+          <li><a href="../Rack/ETag.html">Rack::ETag</a></li>
+        
+          <li><a href="../Rack/File.html">Rack::File</a></li>
+        
+          <li><a href="../Rack/ForwardRequest.html">Rack::ForwardRequest</a></li>
+        
+          <li><a href="../Rack/Handler.html">Rack::Handler</a></li>
+        
+          <li><a href="../Rack/Handler/CGI.html">Rack::Handler::CGI</a></li>
+        
+          <li><a href="../Rack/Handler/EventedMongrel.html">Rack::Handler::EventedMongrel</a></li>
+        
+          <li><a href="../Rack/Handler/FastCGI.html">Rack::Handler::FastCGI</a></li>
+        
+          <li><a href="../Rack/Handler/LSWS.html">Rack::Handler::LSWS</a></li>
+        
+          <li><a href="../Rack/Handler/Mongrel.html">Rack::Handler::Mongrel</a></li>
+        
+          <li><a href="../Rack/Handler/SCGI.html">Rack::Handler::SCGI</a></li>
+        
+          <li><a href="../Rack/Handler/SwiftipliedMongrel.html">Rack::Handler::SwiftipliedMongrel</a></li>
+        
+          <li><a href="../Rack/Handler/Thin.html">Rack::Handler::Thin</a></li>
+        
+          <li><a href="../Rack/Handler/WEBrick.html">Rack::Handler::WEBrick</a></li>
+        
+          <li><a href="../Rack/Head.html">Rack::Head</a></li>
+        
+          <li><a href="../Rack/Lint.html">Rack::Lint</a></li>
+        
+          <li><a href="../Rack/Lobster.html">Rack::Lobster</a></li>
+        
+          <li><a href="../Rack/Lock.html">Rack::Lock</a></li>
+        
+          <li><a href="../Rack/Logger.html">Rack::Logger</a></li>
+        
+          <li><a href="../Rack/MethodOverride.html">Rack::MethodOverride</a></li>
+        
+          <li><a href="../Rack/Mime.html">Rack::Mime</a></li>
+        
+          <li><a href="../Rack/MockRequest.html">Rack::MockRequest</a></li>
+        
+          <li><a href="../Rack/MockRequest/FatalWarner.html">Rack::MockRequest::FatalWarner</a></li>
+        
+          <li><a href="../Rack/MockRequest/FatalWarning.html">Rack::MockRequest::FatalWarning</a></li>
+        
+          <li><a href="../Rack/MockResponse.html">Rack::MockResponse</a></li>
+        
+          <li><a href="../Rack/Multipart.html">Rack::Multipart</a></li>
+        
+          <li><a href="../Rack/Multipart/Generator.html">Rack::Multipart::Generator</a></li>
+        
+          <li><a href="../Rack/Multipart/Parser.html">Rack::Multipart::Parser</a></li>
+        
+          <li><a href="../Rack/Multipart/UploadedFile.html">Rack::Multipart::UploadedFile</a></li>
+        
+          <li><a href="../Rack/NullLogger.html">Rack::NullLogger</a></li>
+        
+          <li><a href="../Rack/Recursive.html">Rack::Recursive</a></li>
+        
+          <li><a href="../Rack/Reloader.html">Rack::Reloader</a></li>
+        
+          <li><a href="../Rack/Reloader/Stat.html">Rack::Reloader::Stat</a></li>
+        
+          <li><a href="../Rack/Request.html">Rack::Request</a></li>
+        
+          <li><a href="../Rack/Response.html">Rack::Response</a></li>
+        
+          <li><a href="../Rack/Response/Helpers.html">Rack::Response::Helpers</a></li>
+        
+          <li><a href="../Rack/RewindableInput.html">Rack::RewindableInput</a></li>
+        
+          <li><a href="../Rack/RewindableInput/Tempfile.html">Rack::RewindableInput::Tempfile</a></li>
+        
+          <li><a href="../Rack/Runtime.html">Rack::Runtime</a></li>
+        
+          <li><a href="../Rack/Sendfile.html">Rack::Sendfile</a></li>
+        
+          <li><a href="../Rack/Server.html">Rack::Server</a></li>
+        
+          <li><a href="../Rack/Server/Options.html">Rack::Server::Options</a></li>
+        
+          <li><a href="../Rack/Session.html">Rack::Session</a></li>
+        
+          <li><a href="../Rack/Session/Abstract.html">Rack::Session::Abstract</a></li>
+        
+          <li><a href="../Rack/Session/Abstract/ID.html">Rack::Session::Abstract::ID</a></li>
+        
+          <li><a href="../Rack/Session/Abstract/SessionHash.html">Rack::Session::Abstract::SessionHash</a></li>
+        
+          <li><a href="../Rack/Session/Cookie.html">Rack::Session::Cookie</a></li>
+        
+          <li><a href="../Rack/Session/Cookie/Base64.html">Rack::Session::Cookie::Base64</a></li>
+        
+          <li><a href="../Rack/Session/Cookie/Base64/Marshal.html">Rack::Session::Cookie::Base64::Marshal</a></li>
+        
+          <li><a href="../Rack/Session/Cookie/Identity.html">Rack::Session::Cookie::Identity</a></li>
+        
+          <li><a href="../Rack/Session/Cookie/Reverse.html">Rack::Session::Cookie::Reverse</a></li>
+        
+          <li><a href="../Rack/Session/Memcache.html">Rack::Session::Memcache</a></li>
+        
+          <li><a href="../Rack/Session/Pool.html">Rack::Session::Pool</a></li>
+        
+          <li><a href="../Rack/ShowExceptions.html">Rack::ShowExceptions</a></li>
+        
+          <li><a href="../Rack/ShowStatus.html">Rack::ShowStatus</a></li>
+        
+          <li><a href="../Rack/Static.html">Rack::Static</a></li>
+        
+          <li><a href="../Rack/URLMap.html">Rack::URLMap</a></li>
+        
+          <li><a href="../Rack/Utils.html">Rack::Utils</a></li>
+        
+          <li><a href="../Rack/Utils/Context.html">Rack::Utils::Context</a></li>
+        
+          <li><a href="../Rack/Utils/HeaderHash.html">Rack::Utils::HeaderHash</a></li>
+        
+          <li><a href="../Rack/Utils/KeySpaceConstrainedParams.html">Rack::Utils::KeySpaceConstrainedParams</a></li>
+        
+          <li><a href="../Rack/Multipart.html">Rack::Utils::Multipart</a></li>
+        
+          <li><a href="../FCGI.html">FCGI</a></li>
+        
+          <li><a href="../FCGI/Stream.html">FCGI::Stream</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">Rack::Server</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+      <!-- Attributes -->
+      <div id="attribute-method-details" class="method-section section">
+        <h3 class="section-header">Attributes</h3>
+
+        
+        <div id="options-attribute-method" class="method-detail">
+          <a name="options"></a>
+          
+          <a name="options="></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">options</span><span
+              class="attribute-access-type">[W]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+      </div><!-- attribute-method-details -->
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="logging_middleware-method" class="method-detail ">
+          <a name="method-c-logging_middleware"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">logging_middleware</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="logging_middleware-source">
+<pre>
+<span class="ruby-comment"># File lib/rack/server.rb, line 206</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">logging_middleware</span>
+  <span class="ruby-identifier">lambda</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">server</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">server</span>.<span class="ruby-identifier">server</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/CGI/</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> [<span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">CommonLogger</span>, <span class="ruby-identifier">$stderr</span>]
+  }
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- logging_middleware-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- logging_middleware-method -->
+
+      
+        <div id="middleware-method" class="method-detail ">
+          <a name="method-c-middleware"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">middleware</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="middleware-source">
+<pre>
+<span class="ruby-comment"># File lib/rack/server.rb, line 212</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">middleware</span>
+  <span class="ruby-ivar">@middleware</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">m</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">h</span>,<span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = []}
+    <span class="ruby-identifier">m</span>[<span class="ruby-string">&quot;deployment&quot;</span>].<span class="ruby-identifier">concat</span> [
+      [<span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">ContentLength</span>],
+      [<span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Chunked</span>],
+      <span class="ruby-identifier">logging_middleware</span>
+    ]
+    <span class="ruby-identifier">m</span>[<span class="ruby-string">&quot;development&quot;</span>].<span class="ruby-identifier">concat</span> <span class="ruby-identifier">m</span>[<span class="ruby-string">&quot;deployment&quot;</span>] <span class="ruby-operator">+</span> [[<span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">ShowExceptions</span>], [<span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Lint</span>]]
+    <span class="ruby-identifier">m</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- middleware-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- middleware-method -->
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(options = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a href="Server/Options.html">Options</a> may include:</p>
+<ul><li>
+<p>:app</p>
+
+<pre>a rack application to run (overrides :config)</pre>
+</li><li>
+<p>:config</p>
+
+<pre>a rackup configuration file path to load (.ru)</pre>
+</li><li>
+<p>:environment</p>
+
+<pre>this selects the middleware that will be wrapped around
+your application. Default options available are:
+  - development: CommonLogger, ShowExceptions, and Lint
+  - deployment: CommonLogger
+  - none: no extra middleware
+note: when the server is a cgi server, CommonLogger is not included.</pre>
+</li><li>
+<p>:server</p>
+
+<pre>choose a specific Rack::Handler, e.g. cgi, fcgi, webrick</pre>
+</li><li>
+<p>:daemonize</p>
+
+<pre>if true, the server will daemonize itself (fork, detach, etc)</pre>
+</li><li>
+<p>:pid</p>
+
+<pre>path to write a pid file after daemonize</pre>
+</li><li>
+<p>:Host</p>
+
+<pre>the host address to bind to (used by supporting Rack::Handler)</pre>
+</li><li>
+<p>:Port</p>
+
+<pre>the port to bind to (used by supporting Rack::Handler)</pre>
+</li><li>
+<p>:AccessLog</p>
+
+<pre>webrick acess log options (or supporting Rack::Handler)</pre>
+</li><li>
+<p>:debug</p>
+
+<pre>turn on debug output ($DEBUG = true)</pre>
+</li><li>
+<p>:warn</p>
+
+<pre>turn on warnings ($-w = true)</pre>
+</li><li>
+<p>:include</p>
+
+<pre>add given paths to $LOAD_PATH</pre>
+</li><li>
+<p>:require</p>
+
+<pre>require the given libraries</pre>
+</li></ul>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+<pre>
+<span class="ruby-comment"># File lib/rack/server.rb, line 174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">options</span>
+  <span class="ruby-ivar">@app</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:app</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:app</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+
+      
+        <div id="start-method" class="method-detail ">
+          <a name="method-c-start"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">start</span><span
+              class="method-args">(options = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Start a new rack server (like running rackup). This will parse ARGV and
+provide standard ARGV rackup options, defaulting to load 'config.ru'.</p>
+
+<p>Providing an options hash will prevent ARGV parsing and will not include
+any default options.</p>
+
+<p>This method can be used to very easily launch a CGI application, for
+example:</p>
+
+<pre>Rack::Server.start(
+  :app =&gt; lambda do |e|
+    [200, {'Content-Type' =&gt; 'text/html'}, ['hello world']]
+  end,
+  :server =&gt; 'cgi'
+)</pre>
+
+<p>Further options available here are documented on Rack::Server#initialize</p>
+            
+
+            
+            <div class="method-source-code" id="start-source">
+<pre>
+<span class="ruby-comment"># File lib/rack/server.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">start</span>(<span class="ruby-identifier">options</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>).<span class="ruby-identifier">start</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- start-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- start-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="app-method" class="method-detail ">
+          <a name="method-i-app"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">app</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="app-source">
+<pre>
+<span class="ruby-comment"># File lib/rack/server.rb, line 194</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">app</span>
+  <span class="ruby-ivar">@app</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-operator">::</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:config</span>]
+      <span class="ruby-identifier">abort</span> <span class="ruby-node">&quot;configuration #{options[:config]} not found&quot;</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">app</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Builder</span>.<span class="ruby-identifier">parse_file</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">options</span>[<span class="ruby-value">:config</span>], <span class="ruby-identifier">opt_parser</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge!</span> <span class="ruby-identifier">options</span>
+    <span class="ruby-identifier">app</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- app-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- app-method -->
+
+      
+        <div id="default_options-method" class="method-detail ">
+          <a name="method-i-default_options"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">default_options</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="default_options-source">
+<pre>
+<span class="ruby-comment"># File lib/rack/server.rb, line 183</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">default_options</span>
+  {
+    <span class="ruby-value">:environment</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">'RACK_ENV'</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&quot;development&quot;</span>,
+    <span class="ruby-value">:pid</span>         =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>,
+    <span class="ruby-value">:Port</span>        =<span class="ruby-operator">&gt;</span> <span class="ruby-value">9292</span>,
+    <span class="ruby-value">:Host</span>        =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;0.0.0.0&quot;</span>,
+    <span class="ruby-value">:AccessLog</span>   =<span class="ruby-operator">&gt;</span> [],
+    <span class="ruby-value">:config</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;config.ru&quot;</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- default_options-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- default_options-method -->
+
+      
+        <div id="middleware-method" class="method-detail ">
+          <a name="method-i-middleware"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">middleware</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="middleware-source">
+<pre>
+<span class="ruby-comment"># File lib/rack/server.rb, line 225</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">middleware</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">middleware</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- middleware-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- middleware-method -->
+
+      
+        <div id="options-method" class="method-detail ">
+          <a name="method-i-options"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">options</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="options-source">
+<pre>
+<span class="ruby-comment"># File lib/rack/server.rb, line 179</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">options</span>
+  <span class="ruby-ivar">@options</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">parse_options</span>(<span class="ruby-constant">ARGV</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- options-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- options-method -->
+
+      
+        <div id="server-method" class="method-detail ">
+          <a name="method-i-server"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">server</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="server-source">
+<pre>
+<span class="ruby-comment"># File lib/rack/server.rb, line 268</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">server</span>
+  <span class="ruby-ivar">@_server</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Handler</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:server</span>]) <span class="ruby-operator">||</span> <span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Handler</span>.<span class="ruby-identifier">default</span>(<span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- server-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- server-method -->
+
+      
+        <div id="start-method" class="method-detail ">
+          <a name="method-i-start"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">start</span><span
+              class="method-args">(&blk)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="start-source">
+<pre>
+<span class="ruby-comment"># File lib/rack/server.rb, line 229</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">start</span> &amp;<span class="ruby-identifier">blk</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:warn</span>]
+    <span class="ruby-identifier">$-w</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">includes</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:include</span>]
+    <span class="ruby-identifier">$LOAD_PATH</span>.<span class="ruby-identifier">unshift</span>(*<span class="ruby-identifier">includes</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">library</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:require</span>]
+    <span class="ruby-identifier">require</span> <span class="ruby-identifier">library</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:debug</span>]
+    <span class="ruby-identifier">$DEBUG</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">'pp'</span>
+    <span class="ruby-identifier">p</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:server</span>]
+    <span class="ruby-identifier">pp</span> <span class="ruby-identifier">wrapped_app</span>
+    <span class="ruby-identifier">pp</span> <span class="ruby-identifier">app</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Touch the wrapped app, so that the config.ru is loaded before</span>
+  <span class="ruby-comment"># daemonization (i.e. before chdir, etc).</span>
+  <span class="ruby-identifier">wrapped_app</span>
+
+  <span class="ruby-identifier">daemonize_app</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:daemonize</span>]
+  <span class="ruby-identifier">write_pid</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:pid</span>]
+
+  <span class="ruby-identifier">trap</span>(<span class="ruby-value">:INT</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">server</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:shutdown</span>)
+      <span class="ruby-identifier">server</span>.<span class="ruby-identifier">shutdown</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">exit</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">server</span>.<span class="ruby-identifier">run</span> <span class="ruby-identifier">wrapped_app</span>, <span class="ruby-identifier">options</span>, &amp;<span class="ruby-identifier">blk</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- start-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- start-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+
