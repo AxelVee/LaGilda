@@ -5,8 +5,9 @@ gem 'rails', '3.2.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem "sqlite3-ruby", "~> 1.3.3"
-gem "sqlite3"
+
+#gem "sqlite3"
+gem "mysql2"
 gem "rspec-core"
 gem "spork","0.9.0"
 gem "heroku", "2.20.1"
@@ -17,6 +18,7 @@ gem "rake"
 gem "devise"
 gem "cancan"
 gem "cucumber"
+gem "actionmailer"
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -36,6 +38,7 @@ gem "cucumber"
 group :development do
   gem 'rspec-rails'
   gem 'annotated_models'
+  gem 'sqlite3'
 end
 
 group :assets do
