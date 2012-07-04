@@ -19,7 +19,7 @@ gem "devise"
 gem "cancan"
 gem "cucumber"
 gem "actionmailer"
-
+gem "rdoc-data"
 # Use unicorn as the web server
 # gem 'unicorn'
 
