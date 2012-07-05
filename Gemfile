@@ -34,8 +34,8 @@ gem "cucumber"
 group :production do
 gem 'thin'
  #gem "eventmachine", "1.0.0.beta.4.1"
- #gem "eventmachine", "1.0.0.beta.4"
- gem 'eventmachine', '1.0.0.beta.2'
+ gem "eventmachine", "1.0.0.beta.4"
+ #gem "eventmachine", "1.0.0.beta.2"
 end
 # Bundle the extra gems:
 # gem 'bj'
