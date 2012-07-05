@@ -32,7 +32,7 @@ gem "cucumber"
 # gem 'ruby-debug'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 group :production do
-gem 'thin'
+gem 'thin', '1.3.1'
  #gem "eventmachine", "1.0.0.beta.4.1"
  gem "eventmachine", "1.0.0.beta.4"
  #gem "eventmachine", "1.0.0.beta.2"
