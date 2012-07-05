@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+ruby '1.9.2'
 gem 'rails', '3.2.6'
 
 # Bundle edge Rails instead:
@@ -7,10 +8,11 @@ gem 'rails', '3.2.6'
 
 
 #gem "sqlite3"
-gem "mysql2"
+gem "pg"
 gem "rspec-core"
 gem "spork","0.9.0"
 gem "heroku", "2.20.1"
+gem "eventmachine", "1.0.0.beta.4.1"
 
 gem "jquery-rails"
 gem 'admin_data', '= 1.1.14'
@@ -19,6 +21,7 @@ gem "devise"
 gem "cancan"
 gem "cucumber"
 gem "actionmailer"
+
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -29,7 +32,9 @@ gem "actionmailer"
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'
 # gem 'ruby-debug19', :require => 'ruby-debug'
-
+group :production do
+  gem 'thin', '1.3.1'
+end
 # Bundle the extra gems:
 # gem 'bj'
 # gem 'nokogiri'
