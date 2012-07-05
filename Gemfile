@@ -12,7 +12,7 @@ gem "pg"
 gem "rspec-core"
 gem "spork","0.9.0"
 gem "heroku", "2.20.1"
-gem "eventmachine", "1.0.0.beta.4.1"
+
 
 gem "jquery-rails"
 gem 'admin_data', '= 1.1.14'
@@ -34,6 +34,7 @@ gem "actionmailer"
 # gem 'ruby-debug19', :require => 'ruby-debug'
 group :production do
   gem 'thin', '1.3.1'
+  gem "eventmachine", "1.0.0.beta.4.1"
 end
 # Bundle the extra gems:
 # gem 'bj'
