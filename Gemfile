@@ -34,7 +34,7 @@ gem "actionmailer"
 # gem 'ruby-debug19', :require => 'ruby-debug'
 group :production do
   gem 'thin', '1.3.1'
-  gem "eventmachine", "1.0.0.beta.4.1"
+  
 end
 # Bundle the extra gems:
 # gem 'bj'
@@ -45,6 +45,7 @@ group :development do
   gem 'rspec-rails'
   gem 'annotated_models'
   gem 'sqlite3'
+  gem "eventmachine", "1.0.0.beta.4.1"
 end
 
 group :assets do
