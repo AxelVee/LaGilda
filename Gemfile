@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-ruby '1.9.2'
+ruby '1.9.3'
 gem 'rails', '3.2.6'
 
 # Bundle edge Rails instead:
@@ -32,9 +32,9 @@ gem "cucumber"
 # gem 'ruby-debug'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 group :production do
-#gem 'thin'
+gem 'thin'
  #gem "eventmachine", "1.0.0.beta.4.1"
-# gem "eventmachine", "1.0.0.beta.4"
+gem "eventmachine", "1.0.0.beta.4"
  #gem "eventmachine", "1.0.0.beta.2"
  gem "pg"
 end
