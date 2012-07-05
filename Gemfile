@@ -45,7 +45,7 @@ group :development do
   gem 'rspec-rails'
   gem 'annotated_models'
   gem 'sqlite3'
-  gem "eventmachine", "1.0.0.beta.4.1"
+  gem "eventmachine", "1.0.0.beta.4"
 end
 
 group :assets do
