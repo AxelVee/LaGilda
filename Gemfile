@@ -8,7 +8,7 @@ gem 'rails', '3.2.6'
 
 
 #gem "sqlite3"
-gem "pg"
+
 
 gem "heroku"
 
@@ -32,10 +32,11 @@ gem "cucumber"
 # gem 'ruby-debug'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 group :production do
-gem 'thin', '1.3.1'
+gem 'thin'
  #gem "eventmachine", "1.0.0.beta.4.1"
  gem "eventmachine", "1.0.0.beta.4"
  #gem "eventmachine", "1.0.0.beta.2"
+ gem "pg"
 end
 # Bundle the extra gems:
 # gem 'bj'
