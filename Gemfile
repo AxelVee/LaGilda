@@ -9,9 +9,8 @@ gem 'rails', '3.2.6'
 
 #gem "sqlite3"
 gem "pg"
-gem "rspec-core"
-gem "spork","0.9.0"
-gem "heroku", "2.20.1"
+
+gem "heroku"
 
 
 gem "jquery-rails"
@@ -20,7 +19,7 @@ gem "rake"
 gem "devise"
 gem "cancan"
 gem "cucumber"
-gem "actionmailer"
+
 
 
 # Use unicorn as the web server
@@ -46,6 +45,8 @@ group :development do
   gem 'annotated_models'
   gem 'sqlite3'
   gem "eventmachine", "1.0.0.beta.4"
+  gem "rspec-core"
+  gem "spork","0.9.0"
 end
 
 group :assets do
