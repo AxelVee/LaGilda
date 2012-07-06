@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 #ruby '1.9.2'
-gem 'rails', '3.1.3' 
+gem 'rails', '3.2.6' 
 #'3.2.6'
 
 # Bundle edge Rails instead:
@@ -13,9 +13,9 @@ gem 'rails', '3.1.3'
 
 gem "heroku"
 gem "engineyard"
-gem "mysql2"
+
 gem "jquery-rails"
-gem 'admin_data', '= 1.1.14'
+
 gem "rake"
 gem "devise"
 gem "cancan"
@@ -32,13 +32,15 @@ gem "cucumber"
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'
 # gem 'ruby-debug19', :require => 'ruby-debug'
-#group :production do
+group :production do
 #gem 'thin'
  #gem "eventmachine", "1.0.0.beta.4.1"
 #gem "eventmachine", "1.0.0.beta.4"
  #gem "eventmachine", "1.0.0.beta.2"
  #gem "pg"
-#end
+gem "mysql2"
+
+end
 # Bundle the extra gems:
 # gem 'bj'
 # gem 'nokogiri'
