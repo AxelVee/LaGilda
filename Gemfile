@@ -48,7 +48,7 @@ end
 # gem 'aws-s3', :require => 'aws/s3'
 group :development do
   gem 'rspec-rails'
-  gem 'annotated_models'
+  gem 'annotate'
   gem 'sqlite3'
 
   gem "rspec-core"

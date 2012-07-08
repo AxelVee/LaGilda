@@ -1,11 +1,17 @@
 CastingUP::Application.routes.draw do
   
+  devise_for :users
+
    root :to => "home#homepage"
   
   match '/about', :to => 'home#about'
   
   match '/termsofuse', :to => 'home#termsofuse'
 
+    match '/iscrizione', :to => 'home#iscrizione'
+    
+  get "home/iscrizione"
+  
   get "home/about"
 
   get "home/users"
