@@ -35,7 +35,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       t.string :name
       t.string :surname
-      t.string :email
+#      t.string :email
       t.string :address
       t.float :availability
       t.string :city

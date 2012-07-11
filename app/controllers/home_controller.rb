@@ -31,6 +31,8 @@ class HomeController < ApplicationController
     
   end
 
-  
+  def iscrizione
+    @title = "Iscriviti adesso"
+  end
  
 end
