@@ -37,3 +37,11 @@ nav ul li{
 	font-size: 12px;
 	padding: 0 10px;
 }
+
+#contents div.user_nav{
+	background-color: #bfbdbd;
+	height: 40px;
+	line-height: 40px;
+	margin-bottom: 20px;
+	padding: 0;
+}

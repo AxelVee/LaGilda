@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>La Gilda</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />	
+
+  
+</head>
+
+<body>
+	
+	
+
+	
+		
+		
+			<span class="header"></span>
+			<h3>Iscriviti adesso</h3>
+			<div class="links">
+				<a href="iscrizione.html">Share</a>
+				<a href="http://twitter.com/fwtemplates" target="_blank" >Re-Tweet</a>
+			</div>
+
+<section class="corpo">
+				
+	
+		
+		
+		
+
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+
+	<div><%= f.label :name %><br />
+  <%= f.text_field :name %></div>
+  
+  <div><%= f.label :surname %><br />
+  <%= f.text_field :surname %></div>
+  
+  <div><%= f.label :address %><br />
+  <%= f.text_field :address %></div>
+  
+  
+  <div><%= f.label :availability %><br />
+  <%= f.text_field :availability %></div>
+  
+  <div><%= f.label :city %><br />
+  <%= f.text_field :city %></div>
+  
+  <div><%= f.label :nickskype %><br />
+  <%= f.text_field :nickskype %></div>
+  
+  <div><%= f.label :attitude %><br />
+  <%= f.text_field :attitude %></div>
+  
+  <div><%= f.label :passion %><br />
+  <%= f.text_field :passion %></div>
+  
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+  <div><%= f.submit "Sign up" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+	</section>
+
+
+  <a href="homepage.html">Back to homepage>></a>
+</body>
+</html>

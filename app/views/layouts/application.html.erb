@@ -24,20 +24,28 @@
 <%= stylesheet_link_tag 'prova', :media => 'screen' %>
 </head>
 
+
 <body>
 		
 
+
 	<div id="background"></div>
+
 	<div id="page">
 		<div id="sidebar">
 			<div id="logo">
 				<%= link_to image_tag("I selezionati maestri d'arte\n disponibili per te"), root_path %>
 					
 			</div> <!-- /#logo -->
+			
+	
+
+
+
 			<ul id="navigation">
 				<li><%= link_to "About us", about_path %></a></li>
 				<li><%= link_to "Galleria", root_path %></a></li>
-				<li><%= link_to "Iscriviti adesso", iscrizione_path %></a></li>
+				<li><%= link_to "Iscriviti adesso", signup_path %></a></li>
 				<li><a href="contact-us.html">Scegli la tua lezione</a></li>
 				<li><a href="blog.html">Forum</a></li>
 			</ul> <!-- /#navigation -->
@@ -54,14 +62,31 @@
 		</div> <!-- /.footer -->
 			
 		
-			
+
 		</div> <!-- /#sidebar -->
 		
 	
 
 	<div id="contents">
+		
+		
+
+<div class="tags">
+  <% if user_signed_in? %>
+    Loggato con utenza: <%= current_user.email %>. Non sei tu?
+    <%= link_to "Esci", signout_path %>
+  <% else %>
+    Se sei già iscritto
+    <%= link_to "Entra subito", signin_path %>
+  <% end %>
+</div>
+
+
 			<section class="corpo">
+							
 		<%=  yield %>
+		
+		
 			</section>
 
 

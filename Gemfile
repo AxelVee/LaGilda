@@ -13,6 +13,7 @@ gem 'rails', '3.2.6'
 
 gem "heroku"
 gem "engineyard"
+gem 'tlsmail' 
 
 gem "jquery-rails"
 

@@ -17,22 +17,10 @@ class HomeController < ApplicationController
     @title = "About"
   end
 
-  def news
-    
-  end
-
-  def users
-  end
-
-  def posts
-  end
   
-  def homepage
     
-  end
+  
 
-  def iscrizione
-    @title = "Iscriviti adesso"
-  end
+
  
 end

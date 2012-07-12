@@ -1,6 +1,15 @@
 CastingUP::Application.routes.draw do
   
+  
+
   devise_for :users
+  devise_scope :user do
+    match "/signup" => "devise/registrations#new"
+    match "/signout" => "devise/sessions#destroy"
+    match "/signin" => "devise/sessions#create"
+    match "/newconfirmation" => "devise/confirmations#new"
+  end
+
 
    root :to => "home#homepage"
   
@@ -8,13 +17,13 @@ CastingUP::Application.routes.draw do
   
   match '/termsofuse', :to => 'home#termsofuse'
 
-    match '/iscrizione', :to => 'home#iscrizione'
     
-  get "home/iscrizione"
+  
+
   
   get "home/about"
 
-  get "home/users"
+get "user/new"
 
   get "home/posts"
 
