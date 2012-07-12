@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+  before_filter :mailer_set_url_options
+  
+  
   layout :layout_by_resource
 
   protected
@@ -9,6 +12,10 @@ class ApplicationController < ActionController::Base
     else
       "application"
     end
+  end
+
+  def mailer_set_url_options
+    ActionMailer::Base.default_url_options[:host] = request.host_with_port
   end
 
 end
