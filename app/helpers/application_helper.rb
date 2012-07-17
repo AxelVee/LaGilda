@@ -10,4 +10,15 @@ module ApplicationHelper
       "#{base_title} | #{@title}"
     end
   end
+  
+  
+  
+    def eventitle
+    base_title = "Spettacolo"
+    if @event.nil?
+      base_title
+    else
+      "#{base_title} | #{@event.id}"
+    end
+  end
 end

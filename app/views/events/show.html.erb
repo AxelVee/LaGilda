@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>La Gilda</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />	
+
+  
+</head>
+
+<body>
+	
+	
+
+	
+		
+		
+			<span class="header"></span>
+			<h3>Spettacolo <%= @event.data%></h3>
+			<div class="links">
+				<a href="iscrizione.html">Share</a>
+				<a href="http://twitter.com/fwtemplates" target="_blank" >Re-Tweet</a>
+			</div>
+
+<section class="corpo">
+
+
+			<!--><section class="corpo">-->
+							
+	<p id="notice"><%= notice %></p>
+
+<b>Puoi modificare l'immagine di default con la locandina del tuo spettacolo nella seziona "Edit"'</b>
+<p>
+<h1>
+	
+	<%= gravatar_for @event, :size => 300 %>
+	
+</h1>
+</p>
+
+
+<p>
+  <h3>
+  <%= @event.name %>
+</h3>
+</p>
+
+
+<p>
+  <h2>Città:
+  <%= @event.city %></h2>
+</p>
+
+
+
+<p>
+  <h2>Indirizzo:
+  <%= @event.street %>
+  </h2>
+</p>
+
+
+<p>
+  <h2>Prezzo del biglietto:
+  <%= @event.price %>0 euro</h2>
+</p>
+
+
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}" %>
+
+
+<h3>Eventi vicini</h3>
+<ul>
+<% for event in @event.nearbys(50) %>
+
+<li> <%= link_to event.name , event %> (<%= event.distance.round(2) %> chilometri)</li>
+
+<% end %>
+</ul>
+<div class = "links">
+<a href="homepage.html">Back to homepage>></a>
+<%= link_to 'Back', mostra_path %></div>
+</body>
+</html>

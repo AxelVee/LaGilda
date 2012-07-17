@@ -14,15 +14,17 @@ gem 'rails', '3.2.6'
 gem "heroku"
 gem "engineyard"
 #gem 'tlsmail' 
-
+gem "geocoder"
+gem "gmaps4rails"
 gem "jquery-rails"
-
+#gem "activeadmin"
 gem "rake"
 gem "devise"
 gem "cancan"
 gem "cucumber"
-
-
+gem 'rails_admin'
+gem 'gravatar_image_tag'
+#gem "meta_search",    '>= 1.1.0.pre'
 
 # Use unicorn as the web server
 # gem 'unicorn'

@@ -21,3 +21,6 @@ ActionMailer::Base.smtp_settings = {
    :user_name => "lagilda84@gmail.com ",
    :password => "otaku8184",
 }
+
+
+Date::DATE_FORMATS[:default] = "%d/%m/%Y"
