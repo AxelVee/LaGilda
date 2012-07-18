@@ -1,0 +1,66 @@
+<!--<h1>Listing events</h1>-->
+<!DOCTYPE html>
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>La Gilda</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />	
+
+  <script src="/javascripts/gmaps4rails.base.js.coffe" type="text/javascript"></script> 
+
+<script type="text/javascript" src="//maps.google.com/maps/api/js?v=3.5&sensor=false&amp;libraries=geometry"></script>
+<script type="text/javascript" src="//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.5/src/markerclusterer_packed.js"></script>
+</script>
+</head>
+
+
+	
+	
+
+	
+		
+		
+			<span class="header"></span>
+			<h3>Galleria insegnanti</h3>
+			<div class="links">
+				<a href="iscrizione.html">Share</a>
+				<a href="http://twitter.com/fwtemplates" target="_blank" >Re-Tweet</a>
+			</div>
+
+<section class="corpo">
+
+
+<table>
+  <tr>
+  	<th></th>
+    <th>Nome</th>
+   
+    <th>Materia</th>
+  
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @teachers.each do |teacher| %>
+  <tr>
+  	
+  	<td><%= link_to image_tag teacher.photo %></td>
+    <td><h2><%= link_to teacher.name, teacher %></h2></td>
+    
+    <td><%= teacher.subject %></td>
+   
+   
+    
+  </tr>
+<% end %>
+</table>
+</section>
+<br />
+
+
+<%= will_paginate @teachers %>
+
+

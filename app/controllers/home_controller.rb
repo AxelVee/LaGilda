@@ -17,7 +17,11 @@ class HomeController < ApplicationController
     @title = "About"
   end
 
-  
+  def shower
+    @teacher = Teacher.find(params[:id])
+
+   
+    end
     
   
 

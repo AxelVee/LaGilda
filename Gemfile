@@ -24,6 +24,8 @@ gem "cancan"
 gem "cucumber"
 gem 'rails_admin'
 gem 'gravatar_image_tag'
+gem 'paperclip'
+gem 'will_paginate'
 #gem "meta_search",    '>= 1.1.0.pre'
 
 # Use unicorn as the web server
