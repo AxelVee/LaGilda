@@ -1,14 +1,23 @@
 class TeachersController < ApplicationController
+<<<<<<< HEAD
   
 
   
+=======
+>>>>>>> dca75f7c24244f2a9b84649ee8642ecab0988738
   # GET /teachers
   # GET /teachers.json
   def index
     
+<<<<<<< HEAD
     @teachers = Teacher.page(params[:page]).per(5).order(:name)
     #@teachers = Teacher.all
     @votes = Vote.all
+=======
+    @teachers = Teacher.search(params[:search], params[:page])
+    #@teachers = Teacher.all
+
+>>>>>>> dca75f7c24244f2a9b84649ee8642ecab0988738
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @teachers }
@@ -18,15 +27,21 @@ class TeachersController < ApplicationController
   # GET /teachers/1
   # GET /teachers/1.json
   def show
+<<<<<<< HEAD
     @current_user = User.first
    @teacher = Teacher.find(params[:id])
         @vote = @teacher.votes.build
 @vote = Vote.new
+=======
+    @teacher = Teacher.find(params[:id])
+
+>>>>>>> dca75f7c24244f2a9b84649ee8642ecab0988738
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @teacher }
     end
   end
+<<<<<<< HEAD
   
   def search
   @teachers = Teacher.search params[:search]
@@ -37,12 +52,18 @@ class TeachersController < ApplicationController
       format.json { render json: @teachers }
   end
 end
+=======
+>>>>>>> dca75f7c24244f2a9b84649ee8642ecab0988738
 
   # GET /teachers/new
   # GET /teachers/new.json
   def new
     @teacher = Teacher.new
+<<<<<<< HEAD
  @vote = @teacher.votes.build
+=======
+
+>>>>>>> dca75f7c24244f2a9b84649ee8642ecab0988738
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @teacher }
@@ -58,9 +79,12 @@ end
   # POST /teachers.json
   def create
     @teacher = Teacher.new(params[:teacher])
+<<<<<<< HEAD
   @vote = @teacher.votes.build(params[:vote])
    @vote.user_id = current_user.id
    @vote.teacher_id = @teacher.id
+=======
+>>>>>>> dca75f7c24244f2a9b84649ee8642ecab0988738
 
     respond_to do |format|
       if @teacher.save
@@ -100,6 +124,7 @@ end
       format.json { head :no_content }
     end
   end
+<<<<<<< HEAD
    
    def vote
            @teacher = Teacher.find(params[:id])
@@ -135,3 +160,6 @@ end
 end 
   end
 
+=======
+end
+>>>>>>> dca75f7c24244f2a9b84649ee8642ecab0988738

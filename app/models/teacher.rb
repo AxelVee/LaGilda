@@ -1,4 +1,5 @@
 class Teacher < ActiveRecord::Base
+<<<<<<< HEAD
   
  
   has_many :lessons
@@ -9,6 +10,15 @@ class Teacher < ActiveRecord::Base
 
 
   
+=======
+  attr_accessible :cv, :name, :price, :subject, :photo, :phonen
+  
+  has_attached_file :photo
+
+  
+  #:url  => "/assets/teachers/:id/:style/:basename.:extension",
+   #               :path => ":rails_root/public/assets/teachers/:id/:style/:basename.:extension"
+>>>>>>> dca75f7c24244f2a9b84649ee8642ecab0988738
 
 
 validates_attachment_size :photo, :less_than => 5.megabytes
@@ -18,6 +28,7 @@ validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image
   validates :price, presence: true
    validates :phonen, presence: true
 
+<<<<<<< HEAD
 #define_index do
  # indexes cv
   #indexes :name, :sortable => true
@@ -32,6 +43,15 @@ def self.search(search)
   end
  end
 
+=======
+
+
+def self.search(search, page)
+  paginate :per_page => 5, :page => page,
+           :conditions => ['name like ?', "%#{search}%"],
+           :order => 'name'
+end
+>>>>>>> dca75f7c24244f2a9b84649ee8642ecab0988738
 
 
 

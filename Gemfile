@@ -26,6 +26,7 @@ gem "watu_table_builder", :require => "table_builder"
 gem 'rails_admin'
 gem 'gravatar_image_tag'
 gem 'paperclip'
+
 gem 'kaminari'
 
 
