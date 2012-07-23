@@ -7,7 +7,8 @@
 	<link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />	
   
   
-  <%= stylesheet_link_tag "gmaps4rails" %>
+<%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "prova" %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js", "prova" %>
 
  <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
  <%= stylesheet_link_tag 'blueprint/print', :media => 'print' %>
@@ -16,8 +17,6 @@
    
 
 
-<%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "prova" %>
-<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js", "prova" %>
 
 
   <!-- [if -lt IE 9]>
@@ -27,9 +26,9 @@
   	<%= stylesheet_link_tag 'blueprint/ie' %>
   <![endif]-->
 
+
 <%= stylesheet_link_tag 'prova', :media => 'screen' %>
 
-<%= yield :head%>
 </head>
 
 
@@ -41,10 +40,12 @@
 
 	<div id="page">
 		<div id="sidebar">
+			
+
 			<div id="logo">
-				<%= link_to image_tag("I selezionati maestri d'arte\n disponibili per te"), root_path %>
-					
-			</div> <!-- /#logo -->
+				<%= link_to "I selezionati maestri d'arte\n disponibili per te", root_path %>
+					  
+			</div> 
 			
 	
 
@@ -54,25 +55,31 @@
 				<li><%= link_to "About us", about_path %></a></li>
 				<li><%= link_to "Galleria", root_path %></a></li>
 				<li><%= link_to "Iscriviti adesso", signup_path %></a></li>
-				<li><a href="contact-us.html">Scegli la tua lezione</a></li>
-				<li><%= link_to "Inserisci uno show", newshows_path %></a></li>
-				<li><a href="blog.html">Forum</a></li>
-			</ul> <!-- /#navigation -->
+					<% if signed_in?%>	
+				
+				<li><%= link_to "Prenota la tua lezione", booking_path %></a></li>	
+			<%end%>
+			<li><%= link_to "Inserisci uno show", newshows_path %></a></li>
+				
+				<li><%= link_to "Forum", forum_path%></a></li>
+				<li><%= link_to "Area Amministratori", rails_admin_path%></a></li>
+					
+			</ul> 
 			<ul id="connect">
 				<li><a href="http://facebook.com/lagilda" target="_blank" class="facebook"></a></li>
 				<li><a href="http://twitter.com/fwtemplates" target="_blank" class="twitter"></a></li>
 				<li><a href="" class="link-us"></a></li>
-			</ul> <!-- /#connect -->
+			</ul> 
 			<div class="footer">
 				&copy; Copyright &copy; 2012.<br/>
 				<a href="http://www.facebook.com/?action=read&tid=id.253765924714446&sk=inbox&page&query#!/profile.php?id=1575332772">Axel Vee</a> all rights reserved.
+				<div class= "links">Date: <%= Time.now.strftime('%A, %B %Y') %></div>
 			
-			
-		</div> <!-- /.footer -->
+		</div> 
 			
 		
 
-		</div> <!-- /#sidebar -->
+		</div> 
 		
 	
 
@@ -93,15 +100,19 @@
     Se sei già iscritto
     <%= link_to "Entra subito", signin_path %>
   <% end %>
+  <%= render :partial => 'teachers/search' %>
+   
 </div>
 
+    
+  
 
-			<!--><section class="corpo">-->
+		
 						
 		<%=  yield %>
 		
 		
-	<!--	</section>-->
+	
 
 
 	<div class="tags">
@@ -114,7 +125,8 @@
 				
 				
 				</div>
-	 <%= yield :scripts%>
+
+
 
 
 </body>

@@ -1,0 +1,34 @@
+<%= form_for @message, :url => booking_path do |form| %>
+  
+
+  <h3>Prenota la tua lezione</h3>
+  <h2>Ricorda di consultare l'agenda dell'insegnante!!</h2>
+  
+  <fieldset class="fields">
+  	
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.text_field :email %>
+    </div>
+    
+  
+    <div class="field">
+      <%= form.label :nome_insegnante %>
+      <%= form.text_field :subject %>
+    </div>
+    Ricorda di inserire la data in cui fare lezione e ti verrà mandata una mail con l'ora!
+    <div class="field">
+      <%= form.label :testo %>
+      <%= form.text_area :body %>
+    </div>
+  </fieldset>
+  
+  <fieldset class="actions">
+    <%= form.submit "Inoltra" %>
+  </fieldset>
+<% end %>

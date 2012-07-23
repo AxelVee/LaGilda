@@ -1,0 +1,27 @@
+
+
+
+
+<h3>Lezioni di <%=@teacher.name%></h2>
+
+
+<div id = "calendar">
+	 <h2 id="month">
+    <%= link_to "<", :month => (@date.beginning_of_month-1).strftime("%Y-%m-01") %>
+    <%= h @date.strftime("%B %Y") %>
+    <%= link_to ">", :month => (@date.end_of_month+1).strftime("%Y-%m-01") %>
+  </h2>
+  <%= calendar_for @teacher.lessons, :year => @date.year, :month => @date.month do |calendar| %>
+    <%= calendar.head('Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato') %>
+    <% calendar.day(:day_method => :data) do |date, lessons| %>
+      <%= date.day %>
+      <ul>
+      <% for lesson in lessons %>
+        <li><%= h(lesson.hour) %></li>
+      <% end %>
+    </ul>
+    <% end %>
+  <% end %>
+
+</div>
+

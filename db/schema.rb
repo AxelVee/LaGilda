@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120716234755) do
+ActiveRecord::Schema.define(:version => 20120721175421) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -64,6 +64,34 @@ ActiveRecord::Schema.define(:version => 20120716234755) do
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
+  create_table "boards", :force => true do |t|
+    t.string   "title",      :limit => 50
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "conversation_id"
+    t.text     "body"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "comments", ["conversation_id"], :name => "index_comments_on_conversation_id"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
+  create_table "conversations", :force => true do |t|
+    t.string   "title",      :limit => 50
+    t.integer  "board_id"
+    t.integer  "user_id"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
+  add_index "conversations", ["board_id"], :name => "index_conversations_on_board_id"
+  add_index "conversations", ["user_id"], :name => "index_conversations_on_user_id"
+
   create_table "events", :force => true do |t|
     t.string   "city"
     t.string   "name"
@@ -80,9 +108,10 @@ ActiveRecord::Schema.define(:version => 20120716234755) do
     t.integer  "user_id"
   end
 
-  create_table "high_scores", :force => true do |t|
-    t.string   "game"
-    t.integer  "score"
+  create_table "lessons", :force => true do |t|
+    t.date     "data"
+    t.text     "hour"
+    t.integer  "teacher_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -99,6 +128,20 @@ ActiveRecord::Schema.define(:version => 20120716234755) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
+
+  create_table "teachers", :force => true do |t|
+    t.string   "name"
+    t.text     "cv"
+    t.string   "subject"
+    t.float    "price"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.float    "phonen"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",    :null => false
@@ -131,5 +174,13 @@ ActiveRecord::Schema.define(:version => 20120716234755) do
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "votes", :force => true do |t|
+    t.integer  "value"
+    t.integer  "teacher_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end

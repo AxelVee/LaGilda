@@ -15,15 +15,21 @@ gem "heroku"
 gem "engineyard"
 #gem 'tlsmail' 
 gem "geocoder"
-gem "gmaps4rails"
+
 gem "jquery-rails"
 #gem "activeadmin"
 gem "rake"
 gem "devise"
-gem "cancan"
-gem "cucumber"
+
+gem "watu_table_builder", :require => "table_builder"
+
 gem 'rails_admin'
 gem 'gravatar_image_tag'
+gem 'paperclip'
+gem 'kaminari'
+
+
+
 #gem "meta_search",    '>= 1.1.0.pre'
 
 # Use unicorn as the web server
@@ -53,6 +59,7 @@ group :development do
   gem 'rspec-rails'
   gem 'annotate'
   gem 'sqlite3'
+
 
   gem "rspec-core"
   gem "spork","0.9.0"

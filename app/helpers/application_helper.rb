@@ -21,4 +21,8 @@ module ApplicationHelper
       "#{base_title} | #{@event.id}"
     end
   end
+  
+  
+  
+
 end

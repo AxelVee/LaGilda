@@ -10,9 +10,9 @@
   
 </head>
 
-<body>
+
 	
-	
+	<body>
 
 	
 		
@@ -25,17 +25,17 @@
 			</div>
 
 <section class="corpo">
-
+<%= gravatar_for @event%>
+	<a href = "http://gravatar.com/emails" target _blank>change</a>
 <%= render 'form' %>
 
 
-<div>
-	<%= gravatar_for @event%>
-	<a href = "http://gravatar.com/emails" target _blank>change</a>
-	
-</div>
+
+<div class = "links">
 <%= link_to 'Show', @event %> |
 <%= link_to 'Back', events_path %>
- <a href="homepage.html">Back to homepage>></a>
+</div>
+
 </body>
+
 </html>

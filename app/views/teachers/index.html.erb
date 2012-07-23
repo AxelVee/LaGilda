@@ -1,0 +1,72 @@
+<!--<h1>Listing events</h1>-->
+<!DOCTYPE html>
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>La Gilda</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />	
+
+  
+
+
+</head>
+
+
+	
+	
+
+	
+		
+		
+			<span class="header"></span>
+			<h3>Galleria insegnanti</h3>
+			<div class="links">
+				<a href="iscrizione.html">Share</a>
+				<a href="http://twitter.com/fwtemplates" target="_blank" >Re-Tweet</a>
+			</div>
+
+<section class="corpo">
+
+
+<table>
+  <tr>
+  	<th></th>
+    <th>Nome</th>
+   
+    <th>Materia</th>
+  
+    <th>Giudizio degli utenti</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @teachers.each do |teacher| %>
+
+ <tr>
+  
+  	<td><%=  link_to (image_tag teacher.photo), new_teacher_vote_path(teacher.id) %></td>
+  	
+    <td><h2><%= link_to teacher.name, new_teacher_vote_path(teacher.id)%></h2></td>
+    
+      <td><h6><%= teacher.subject %></h6></td>
+      
+    <td> <h2>☆<h7>☆<%= teacher.votes.average(:value) %>☆</h7>☆ </h2></td>    
+   
+ 
+ 
+  
+  </tr>
+
+
+ <%end%> 
+</table>
+</section>
+<h3><%= paginate @teachers %></h3>
+<br />
+
+
+
+
+

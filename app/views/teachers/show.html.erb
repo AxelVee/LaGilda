@@ -1,0 +1,45 @@
+
+
+
+<p>
+  <h3>
+  <%= @teacher.name %></h3>
+</p>
+
+
+
+
+
+<%= image_tag @teacher.photo.url, :size => 300 %>
+
+
+
+
+<p>
+  <h3>Bio:</h3>
+  <%= @teacher.cv %>
+</p>
+
+<p>
+  <h2>Materia:
+  <%= @teacher.subject %></h2>
+</p>
+<% if signed_in?%>
+<p>
+  <h2>Phone Number:
+  <%= @teacher.phonen %>039(prefisso dall'estero)</h2>
+</p>
+
+
+<p>
+  <h2>Tariffa:
+  <%= @teacher.price %>0 € x hour</h2>
+</p>
+
+<%end%>
+<div class = "links">
+<%= link_to 'Back', root_path %>	
+<%=  link_to 'Agenda', teacher_lessons_path(@teacher.id)%>	 
+</div>
+<!--<%= link_to 'Edit', edit_teacher_path(@teacher) %> |-->
+

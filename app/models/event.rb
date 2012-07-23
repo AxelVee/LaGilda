@@ -1,12 +1,10 @@
 class Event < ActiveRecord::Base
  
- include Gmaps4rails::ActsAsGmappable
 
- acts_as_gmappable :process_geocoding => false
 
-def gmaps4rails_address
-  "#{self.city}, #{self.country}"
-end 
+
+
+
 attr_accessible :city, :country, :name, :price, :state, :street, :longitude, :latitude, :data
 
  validates :name, presence: true, length: {maximum: 50}

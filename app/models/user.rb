@@ -1,6 +1,17 @@
 class User < ActiveRecord::Base
   
+
+
+
+
+
+
+
+
+  has_many :conversations
   has_many :events
+  has_many :votes
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -15,6 +26,13 @@ class User < ActiveRecord::Base
   validates :name, presence: true, length: {maximum: 50}
   validates :surname, presence: true, length: {maximum: 50}
   validates :email, presence: true, format: {with: email_regex}, uniqueness: {case_sensitive: false}
+  
+def voted_for?(teacher)
+  teacher.votes.where(  teacher_id: teacher.id, user_id: self.id ).present?
+end
+   
+  
+  
 end
 
 # == Schema Information
